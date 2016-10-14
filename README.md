@@ -1,6 +1,7 @@
 # source-compare-maven-plugin
 Compares the HTML source between local and deployed HTML.
 
+```xml
 <plugin>
     <groupId>me.danchapman.maven.plugins</groupId>
     <artifactId>source-compare-maven-plugin</artifactId>
@@ -19,16 +20,19 @@ Compares the HTML source between local and deployed HTML.
         </execution>
     </executions>
 </plugin>
-
+```
 
 tests.xml
 
+```xml
 <Tests>
 	<test compareSourceFilePath="content-tile.html" urlPath="/content/sample.html" cssSelector="div.content-tile" />
 </Tests>
+```
 
 content-tile.html
 
+```html
 <div class="content-tile section">
  <div class="content-tile-container">
   <p class="content-tile-title"> Test </p>
@@ -48,3 +52,4 @@ content-tile.html
   </figure>
  </div>
 </div>
+```
