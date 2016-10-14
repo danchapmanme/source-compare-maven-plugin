@@ -116,13 +116,13 @@ public class CompareMojo extends AbstractMojo {
                     String difference = StringUtils.difference(compareSource, StringUtils.defaultString(source));
 
                     if (StringUtils.isNotEmpty(difference)) {
-                        getLog().info(String.format("FAILED! Compared %s to %s", compareSourceFilePath, urlPath));
-                        getLog().info("COMPARE SOURCE: " + compareSource);
-                        getLog().info("SOURCE: " + source);
-                        getLog().info("DIFFERENCE: " + difference);
+                        getLog().error(String.format("FAIL! Compared %s to %s", compareSourceFilePath, urlPath));
+                        getLog().error("COMPARE SOURCE: " + compareSource);
+                        getLog().error("SOURCE: " + source);
+                        getLog().error("DIFFERENCE: " + difference);
                         failed = true;
                     } else {
-                        getLog().info(String.format("OK! Compared %s to %s", compareSourceFilePath, urlPath));
+                        getLog().info(String.format("PASS! Compared %s to %s", compareSourceFilePath, urlPath));
                     }
 
                 }
